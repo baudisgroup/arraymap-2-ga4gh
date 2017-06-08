@@ -193,7 +193,7 @@ def cli(input_db, input_collection, output_db, output_collection_individuals, ou
     print('input_db: ' + input_db)
     print('input_collection: ' + input_collection)
     print('output_db: ' + output_db)
-    print('output collections: {}, {}, {}, {}'.format(output_collection_individuals, output_collection_biosamples, 
+    print('output collections: {}, {}, {}, {}'.format(output_collection_individuals, output_collection_biosamples,
                                                         output_collection_callsets, output_collection_variants))
     print('filtering condition: ' + str(query))
     print('demo mode: ' + (str(demo) if demo>0 else 'false'))
@@ -452,7 +452,7 @@ def cli(input_db, input_collection, output_db, output_collection_individuals, ou
                     svlen = end - start
                     # create a tag for each segment
                     tag = str(seg['CHRO'])+'_'+str(seg['SEGSTART'])+'_'+str(seg['SEGSTOP'])+'_'+alternate_bases
-                    call = {'call_set_id': callset_id, 'genotype': ['.', '.'], 'info': {}}
+                    call = {'call_set_id': callset_id, 'genotype': ['.', '.'], 'info': {'biosample_id': biosample_id }}
                     info = {}
 
                     try:
